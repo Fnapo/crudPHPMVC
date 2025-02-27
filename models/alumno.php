@@ -28,7 +28,7 @@ class Alumno
         return $alumnos;
     }
 
-    public function obtener_alumno($resultado, $id)
+    public function obtener_alumno(&$resultado, $id)
     {
         $alumno = null;
         $resultado["error"] = true;
@@ -79,6 +79,7 @@ class Alumno
             $resultado["error"] = true;
         }
     }
+
     public function guardar_nuevo(&$resultado)
     {
         $resultado["error"] = false;
@@ -99,6 +100,29 @@ class Alumno
         } catch (PDOException $errorPDO) {
             $resultado["mensaje"] = $errorPDO->getMessage();
             $resultado["error"] = true;
+        }
+    }
+
+    public function borrar_alumno(&$resultado, $id)
+    {
+        $alumno = null;
+        $resultado["error"] = true;
+        $resultado["mensaje"] = "Alumno no encontrado o nulo ...";
+        if (strlen($id) > 0) {
+            $baseDatos = new BaseDatosController();
+            try {
+                $conexion = $baseDatos->crear_conexion();
+
+                $consultaSQL = "DELETE FROM $this->tabla WHERE id = $id";
+                $sentencia = $conexion->prepare($consultaSQL);
+                $sentencia->execute();
+
+                $conexion = null;
+                $resultado["error"] = false;
+                $resultado["mensaje"] = "Alumno Borrado (Con identificador: $id)";
+            } catch (PDOException $errorPDO) {
+                $resultado["mensaje"] = $errorPDO->getMessage();
+            }
         }
     }
 }

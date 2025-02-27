@@ -6,7 +6,10 @@ if (!$error) {
 ?>
     <div class="col-12 h-100 d-flex flex-wrap justify-content-center align-content-center">
         <div class="col-12 col-md-6">
-            <h2 class="mt-4 text-center"><?= (isset($_POST["crear"]) ? "Insertando " : "Modificando ") . "un Alumno ..." ?> </h2>
+            <h2 class="mt-4 text-center">
+                <!--?= (isset($_POST["crear"]) ? "Insertando " : "Modificando ") . "un Alumno ..." ?>-->
+                <?= $controlador->mostrar_titulo(); ?>
+            </h2>
             <hr>
             <div class="p-3 bg-info">
                 <form id="formulario" method="post" class="was-validated">

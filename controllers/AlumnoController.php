@@ -29,7 +29,7 @@ class AlumnoController extends BasicoController
 
     public function detalles_alumno(&$resultado)
     {
-        $this->vista = DIR_ALUMNOS . "/detalles_alumno.php";
+        $this->vista = DIR_ALUMNOS . "/ver_alumno.php";
         $this->titulo = "Detalles de un Alumno ...";
         $id = escapar(trim($_POST["id"]));
 
@@ -43,6 +43,24 @@ class AlumnoController extends BasicoController
         $id = escapar(trim($_POST["id"]));
 
         return $this->alumno->obtener_alumno($resultado, $id);
+    }
+
+    public function borrar_alumno(&$resultado)
+    {
+        $this->vista = DIR_ALUMNOS . "/borrar_alumno.php";
+        $this->titulo = "Confirmar Borrar un Alumno ...";
+        $id = escapar(trim($_POST["id"]));
+
+        return $this->alumno->obtener_alumno($resultado, $id);
+    }
+
+    public function si_borrar_alumno(&$resultado)
+    {
+        $this->vista = DIR_ALUMNOS . "/listado_alumnos.php";
+        $id = escapar(trim($_POST["id"]));
+        $this->alumno->borrar_alumno($resultado, $id);
+
+        return $this->listar_todos($resultado);
     }
 
     public function guardar_modificado(&$resultado)
