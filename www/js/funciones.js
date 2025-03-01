@@ -2,6 +2,16 @@ function regresar() {
 	window.history.back();
 }
 
+function seleccionTodoFormulario(controlador, accion) {
+	seleccionControllerFormulario(controlador);
+	seleccionAccionFormulario(accion);
+}
+
+function seleccionControllerFormulario(controlador) {
+	let elemento = $(`input[name="controller"][value=${controlador}]`);
+	elemento.prop('checked', true);
+}
+
 function seleccionAccionFormulario(accion) {
 	/*let elemento = document.querySelector(
 		`input[name="accion"][value=${accion}]`

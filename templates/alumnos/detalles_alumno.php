@@ -12,7 +12,7 @@ if (!$error) {
             if ($alumno /*&& $sentencia->rowCount() > 0*/) {
             ?>
                 <div class="container col-12 col-md-6">
-                    <?php include("templates/alumnos/mostrarAlumno.php"); ?>
+                    <?php include_once("templates/alumnos/mostrarAlumno.php"); ?>
                     <div class="row mb-3 justify-content-around">
                         <div class="col-12 justify-content-around d-flex">
                             <?php include_once($botonera); ?>
