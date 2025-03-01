@@ -1,3 +1,5 @@
+<?php //include_once("common/funciones.php"); 
+?>
 <form method="post" class="form-inline col-4 px-0">
     <div class="form-group d-none">
         <input type="text" name="controlador" value="AlumnoController">

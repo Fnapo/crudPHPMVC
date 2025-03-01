@@ -6,7 +6,7 @@
     </div>
     <div class="col-12 normal">
         <label>
-            <?= $alumno["id"] ?>
+            <?= escapar($alumno["id"]); ?>
         </label>
     </div>
 </div>
@@ -18,7 +18,7 @@
     </div>
     <div class="col-12 normal">
         <label>
-            <?= $alumno["apellidos"] . ', ' . $alumno["nombre"] ?>
+            <?= escapar($alumno["apellidos"] . ', ' . $alumno["nombre"]); ?>
         </label>
     </div>
 </div>
@@ -30,7 +30,7 @@
     </div>
     <div class="col-12 normal">
         <label>
-            <?= $alumno["email"] ?>
+            <?= escapar($alumno["email"]); ?>
         </label>
     </div>
 </div>
@@ -42,7 +42,7 @@
     </div>
     <div class="col-12 normal">
         <label>
-            <?= $alumno["edad"] ?>
+            <?= escapar($alumno["edad"]); ?>
         </label>
     </div>
 </div>
