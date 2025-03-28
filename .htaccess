@@ -1,2 +1,3 @@
 RewriteEngine On
 RewriteRule www/css/app.css www/css/app.php
+ErrorDocument 404 http://localhost/crudPHPMVC/404.php
