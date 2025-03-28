@@ -90,3 +90,12 @@ background-color: rgb(138, 102, 172);
 background-color: antiquewhite;
 color: rgb(138, 102, 172);
 }
+
+.total404 {
+height: 100vh;
+background-color: rgb(19, 19, 83);
+}
+
+.sin-imagen{
+background-image: none;
+}
